@@ -12,8 +12,8 @@ const Contents = ({contents}) => {
     return (
         <>
             <div className="row" style={contentsStyle}>
-                { contents.map((content, index) => (
-                    <Content key={index} content={content} />))
+                { contents.map((movie, index) => (
+                    <Content key={index} content={movie} />))
                 }
             </div>
         </>
