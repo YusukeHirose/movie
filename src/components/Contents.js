@@ -1,11 +1,12 @@
 import React from 'react'
 
-const Contents = () => {
+import Content from './Content'
+
+const Contents = (contents) => {
     return (
         <>
-            <div>
-                Contents
-            </div>
+            <h4>Movie List</h4>
+            <Content />
         </>
     )
 }

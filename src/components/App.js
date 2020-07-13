@@ -5,13 +5,17 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './Header';
 import Contents from './Contents'
 
-const App = () => {
+const App = ({contents}) => {
   return (
     <div className="App">
       <Header />
-      <Contents />
+      <Contents contents={contents} />
     </div>
   );
 }
+
+App.defaultProps = {
+  contents: [],
+};
 
 export default App;
