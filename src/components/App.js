@@ -15,7 +15,14 @@ const App = ({contents}) => {
 }
 
 App.defaultProps = {
-  contents: [],
+  contents: [
+    {"id": "1", "title": "title", "release_date": "2020-01-01"},
+    {"id": "2", "title": "title2", "release_date": "2020-01-02"},
+    {"id": "1", "title": "title", "release_date": "2020-01-01"},
+    {"id": "2", "title": "title2", "release_date": "2020-01-02"},
+    {"id": "1", "title": "title", "release_date": "2020-01-01"},
+    {"id": "2", "title": "title2", "release_date": "2020-01-02"},
+  ]
 };
 
 export default App;

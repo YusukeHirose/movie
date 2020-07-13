@@ -2,11 +2,20 @@ import React from 'react'
 
 import Content from './Content'
 
-const Contents = (contents) => {
+const Contents = ({contents}) => {
+    const contentsStyle = {
+        marginTop: "calc(100vh - 90vh)",
+        marginRight: "auto",
+        marginLeft: "auto"
+    }
+
     return (
         <>
-            <h4>Movie List</h4>
-            <Content />
+            <div className="row" style={contentsStyle}>
+                { contents.map((content, index) => (
+                    <Content key={index} content={content} />))
+                }
+            </div>
         </>
     )
 }
