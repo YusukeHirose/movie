@@ -2,12 +2,12 @@ import React from 'react';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import Header from './Header';
+
 const App = () => {
   return (
     <div className="App">
-      <div className="alert alert-primary" role="alert">
-        A simple primary alert—check it out!
-      </div>
+      <Header />
     </div>
   );
 }
