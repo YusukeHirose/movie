@@ -9,9 +9,11 @@ import Pagination from './Pagenation'
 
 const App = () => {
   const [movies, setMovies] = useState([])
+  const [page, setPage] = useState(1)
 
-  useEffect(() => { 
-    fetch("http://127.0.0.1:8080/movies", {
+  const getMovie = (page) => {
+    console.log("page is" + page)
+    fetch("http://127.0.0.1:8080/movies?page=" + page , {
       method: "GET",
       mode: "cors",
     })
@@ -20,8 +22,10 @@ const App = () => {
       console.log(r)  
       return r
     })
-    .then(r => setMovies(r))}, []
-);
+    .then(r => setMovies(r))
+  }
+
+  useEffect(() => getMovie(page), [page])
 
   console.log({movies})
 
@@ -29,20 +33,9 @@ const App = () => {
     <div className="App">
       <Header />
       <Contents contents={movies} />
-      <Pagination />
+      <Pagination page={page} updatePage={setPage}/>
     </div>
   );
 }
-
-App.defaultProps = {
-  contents: [
-    {"id": "1", "title": "title", "release_date": "2020-01-01"},
-    {"id": "2", "title": "title2", "release_date": "2020-01-02"},
-    {"id": "1", "title": "title", "release_date": "2020-01-01"},
-    {"id": "2", "title": "title2", "release_date": "2020-01-02"},
-    {"id": "1", "title": "title", "release_date": "2020-01-01"},
-    {"id": "2", "title": "title2", "release_date": "2020-01-02"},
-  ]
-};
 
 export default App;
