@@ -4,6 +4,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Header from './Header';
 import Contents from './Contents'
+import Pagination from './Pagenation'
+
 
 const App = () => {
   const [movies, setMovies] = useState([])
@@ -27,6 +29,7 @@ const App = () => {
     <div className="App">
       <Header />
       <Contents contents={movies} />
+      <Pagination />
     </div>
   );
 }
