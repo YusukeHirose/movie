@@ -12,22 +12,18 @@ const App = () => {
   const [page, setPage] = useState(1)
 
   const getMovie = (page) => {
-    console.log("page is" + page)
     fetch("http://127.0.0.1:8080/movies?page=" + page , {
       method: "GET",
       mode: "cors",
     })
-    .then(res => {
-      const r = res.json()
-      console.log(r)  
-      return r
-    })
+    .then(res => res.json())
     .then(r => setMovies(r))
   }
 
-  useEffect(() => getMovie(page), [page])
-
-  console.log({movies})
+  useEffect(() => {
+    window.scrollTo(0, 0)
+    getMovie(page)
+  }, [page])
 
   return (
     <div className="App">
